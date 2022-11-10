@@ -185,7 +185,7 @@ public class RowParser {
   @Nullable
   /**
    * Reads the value at the specified {@code columnIndex} and parses it as {@code Locale}.
-   * 
+   *
    * @param columnIndex the column index
    * @param level whether the value is required, recommended or optional according to GTFS
    * @return If parsing was successful returns {@code Locale}, otherwise, {@code null} is returned.
@@ -198,8 +198,8 @@ public class RowParser {
    * Returns a well-formed IETF BCP 47 language tag representing this locale.
    *
    * @return a BCP47 locale representing the {@code languageTag}.
-   * @throws java.util.IllformedLocaleException if the {@code languageTag} doesn't match with IETF BCP 47
-   *     standard.
+   * @throws java.util.IllformedLocaleException if the {@code languageTag} doesn't match with IETF
+   *     BCP 47 standard.
    * @see java.util.Locale.Builder#setLanguageTag(String) and check how <a
    *     href="https://docs.oracle.com/javase/tutorial/i18n/locale/extensions.html">BCP 47
    *     Extensions</a> implemented in java.
