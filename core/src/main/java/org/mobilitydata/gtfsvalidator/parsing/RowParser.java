@@ -191,20 +191,20 @@ public class RowParser {
    * @return If parsing was successful returns {@code Locale}, otherwise, {@code null} is returned.
    */
   public Locale asLanguageCode(int columnIndex, FieldLevelEnum level) {
-    return parseAsType(columnIndex, level, this::parseLocale, InvalidLanguageCodeNotice::new);
+    return parseAsType(columnIndex, level, RowParser::parseLocale, InvalidLanguageCodeNotice::new);
   }
 
   /**
    * Returns a well-formed IETF BCP 47 language tag representing this locale.
    *
    * @return a BCP47 locale representing the {@code languageTag}.
-   * @throws IllformedLocaleException if the {@code languageTag} doesn't match with IETF BCP 47
+   * @throws java.util.IllformedLocaleException if the {@code languageTag} doesn't match with IETF BCP 47
    *     standard.
    * @see java.util.Locale.Builder#setLanguageTag(String) and check how <a
    *     href="https://docs.oracle.com/javase/tutorial/i18n/locale/extensions.html">BCP 47
    *     Extensions</a> implemented in java.
    */
-  private Locale parseLocale(String languageTag) {
+  private static Locale parseLocale(String languageTag) {
     return new Locale.Builder().setLanguageTag(languageTag).build();
   }
 
